@@ -1,11 +1,12 @@
 ---
 import "../styles/global.css";
+import SiteDoodles from "../components/SiteDoodles.astro";
 
 interface Props {
 	title?: string;
 }
 
-const { title = "Sam An2ny" } = Astro.props;
+const { title = "Sam Antony" } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,50 +15,11 @@ const { title = "Sam An2ny" } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-<<<<<<< HEAD
-		<div class="site-doodles" aria-hidden="true">
-			<div class="site-doodles__orb site-doodles__orb--left"></div>
-			<div class="site-doodles__orb site-doodles__orb--right"></div>
-			<div class="site-doodles__scribble site-doodles__scribble--one"></div>
-			<div class="site-doodles__scribble site-doodles__scribble--two"></div>
-			<div class="site-doodles__scribble site-doodles__scribble--three"></div>
-			<div class="site-doodles__mark site-doodles__mark--1">&lt;/&gt;</div>
-			<div class="site-doodles__mark site-doodles__mark--2">API</div>
-			<div class="site-doodles__mark site-doodles__mark--3">cloud</div>
-			<div class="site-doodles__mark site-doodles__mark--4">git push</div>
-			<div class="site-doodles__mark site-doodles__mark--5">CI/CD</div>
-			<div class="site-doodles__mark site-doodles__mark--6">logs</div>
-			<div class="site-doodles__line site-doodles__line--1"></div>
-			<div class="site-doodles__line site-doodles__line--2"></div>
-			<div class="site-doodles__line site-doodles__line--3"></div>
-			<div class="site-doodles__line site-doodles__line--4"></div>
-			<div class="site-doodles__star site-doodles__star--1"></div>
-			<div class="site-doodles__star site-doodles__star--2"></div>
-			<div class="site-doodles__star site-doodles__star--3"></div>
-			<div class="site-doodles__token site-doodles__token--1">Angular</div>
-			<div class="site-doodles__token site-doodles__token--2">TypeScript</div>
-			<div class="site-doodles__token site-doodles__token--3">Spring Boot</div>
-			<div class="site-doodles__token site-doodles__token--4">Java</div>
-			<div class="site-doodles__token site-doodles__token--5">Kafka</div>
-			<div class="site-doodles__token site-doodles__token--6">Airflow</div>
-			<div class="site-doodles__token site-doodles__token--7">Docker</div>
-			<div class="site-doodles__token site-doodles__token--8">Kubernetes</div>
-			<div class="site-doodles__token site-doodles__token--9">AWS</div>
-			<div class="site-doodles__token site-doodles__token--10">Azure</div>
-			<div class="site-doodles__token site-doodles__token--11">MySQL</div>
-			<div class="site-doodles__token site-doodles__token--12">REST APIs</div>
-			<div class="site-doodles__token site-doodles__token--13">Jenkins</div>
-			<div class="site-doodles__token site-doodles__token--14">Microservices</div>
-			<div class="site-doodles__token site-doodles__token--15">PostgreSQL</div>
-			<div class="site-doodles__token site-doodles__token--16">Node.js</div>
-		</div>
-=======
->>>>>>> 3a6893926242920343bcfa8e80091ca2d15cb647
+		<SiteDoodles />
 		<slot />
 	</body>
 </html>

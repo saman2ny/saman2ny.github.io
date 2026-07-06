@@ -1,0 +1,23 @@
+---
+import ResumeCard from "../components/ResumeCard";
+import type { Resume } from "../features/experience";
+
+interface Props {
+  resume: Resume;
+}
+
+const { resume } = Astro.props;
+---
+
+<section class="resume-section">
+  <div class="resume-section-container">
+    <h2 class="resume-section-title">Resume</h2>
+    <ResumeCard
+      client:load
+      fileName={resume.fileName}
+      uploadDate={resume.uploadDate}
+      resumeUrl={resume.resumeUrl}
+    />
+  </div>
+</section>
+

@@ -1,0 +1,60 @@
+---
+import type { CompanyExperience, Highlight } from "../features/experience";
+
+interface Props {
+  companies: CompanyExperience[];
+  highlights: Highlight[];
+  title: string;
+  description: string;
+}
+
+const { companies, highlights, title, description } = Astro.props;
+---
+
+<section class="hero__experience" aria-labelledby="experience-title">
+  <div class="hero__experience-top">
+    <div class="hero__experience-copy">
+      <p class="hero__section-label">Built across</p>
+      <h2 id="experience-title">{title}</h2>
+      <p>{description}</p>
+    </div>
+
+    <aside class="hero__experience-aside" aria-label="Selected companies">
+      <p class="hero__aside-label">Selected companies</p>
+      <div class="hero__company-pills" aria-label="Companies">
+        {companies.map((company) => (
+          <span class="hero__company-pill">{company.name}</span>
+        ))}
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero__timeline" aria-label="Experience timeline">
+    {companies.map((company, index) => (
+      <article class="hero__timeline-card">
+        <div class="hero__timeline-meta">
+          <span class="hero__timeline-index">0{index + 1}</span>
+          <p class="hero__timeline-period">{company.period}</p>
+        </div>
+        <h3>{company.name}</h3>
+        <p>{company.role}</p>
+      </article>
+    ))}
+  </div>
+
+  <div class="hero__support" aria-labelledby="support-title">
+    <div class="hero__support-heading">
+      <p class="hero__section-label">Snapshot</p>
+      <h3 id="support-title">A quick read on how I build, how I work, and the stack I lean on.</h3>
+    </div>
+
+    <div class="hero__card-grid hero__card-grid--support" aria-label="Highlights">
+      {highlights.map((highlight) => (
+        <article class="hero__card hero__card--support">
+          <h2>{highlight.title}</h2>
+          <p>{highlight.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

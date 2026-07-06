@@ -1,11 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Welcome from "../components/Welcome.astro";
-import Blog from "../components/Blog.astro";
+import HeroSection from "../features/HeroSection.astro";
+import ExperienceSection from "../features/ExperienceSection.astro";
+import ResumeSection from "../features/ResumeSection.astro";
+import { companies, highlights, experienceTitle, experienceDescription, resume } from "../features/experience";
 
+const heroContent = {
+  subtitle: "Product builder • Backend engineer • Systems thinker",
+  heading: "Hi, I'm Sam Antony.",
+  lead: "I build and ship dependable products that are designed to earn consistently, scale cleanly, and stay pleasant to maintain.",
+};
 ---
 
-<Layout>
-	<Welcome />
-	<Blog />
+<Layout title="Sam Antony">
+  <HeroSection {...heroContent} />
+
+  <ExperienceSection
+    companies={companies}
+    highlights={highlights}
+    title={experienceTitle}
+    description={experienceDescription}
+  />
+
+  <ResumeSection resume={resume} />
 </Layout>
